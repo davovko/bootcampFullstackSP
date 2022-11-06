@@ -29,8 +29,26 @@ public class Challenge1 {
     	
 	}
 	
-	public static boolean findString()
-    {
+	public static boolean findString(String value, List<String> list)
+    {	
+    	boolean b = true;
+    	
+    	for(int j = 0; j < list.size(); j++ ) {	 
+    		if(value.equals(list.get(j).toString().toUpperCase())) {
+    			b = false;
+    			break;
+    		}	    		
+    	}
+    	return b;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+		//Punto 2.a
+		System.out.println(randomNumber());	
+			
+		//Punto 2.b
 		System.out.print("Digite el nombre de una fruta: ");
 	    option = scanner.nextLine().trim().toUpperCase();
     	
@@ -44,23 +62,8 @@ public class Challenge1 {
     	list.add("Fresa");  
     	list.add("Coco");  
     	list.add("Papaya"); 
-    	
-    	
-    	boolean b = true;
-    	
-    	for(int j = 0; j < list.size(); j++ ) {	 
-    		if(option.equals(list.get(j).toString().toUpperCase())) {
-    			b = false;
-    			break;
-    		}	    		
-    	}
-    	return b;
-    }
-	
-	
-	public static void main(String[] args) {		        
-		System.out.println(randomNumber());
-		System.out.println(findString());		  
+		
+		System.out.println(findString(option, list));		  
 		System.exit(0);
 	}
 	
