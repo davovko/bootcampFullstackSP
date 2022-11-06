@@ -37,9 +37,7 @@ public class Challenge1 {
     	
     	list = list.stream().map(String::toUpperCase).collect(Collectors.toList());
     	
-    	b = list.contains(value) ? false : true; 	
-    	
-    	return b;
+    	return list.contains(value) ? false : true; 
     }
 	
 	
