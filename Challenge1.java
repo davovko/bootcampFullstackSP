@@ -1,6 +1,8 @@
 package challenge1;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 
 public class Challenge1 {
 	
@@ -33,12 +35,19 @@ public class Challenge1 {
     {	
     	boolean b = true;
     	
-    	for(int j = 0; j < list.size(); j++ ) {	 
+    	/*for(int j = 0; j < list.size(); j++ ) {	 
     		if(value.equals(list.get(j).toString().toUpperCase())) {
     			b = false;
     			break;
     		}	    		
-    	}
+    	}*/
+    	
+    	list = list.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+    	
+    	b = list.contains(value) ? false : true; 	
+    	
     	return b;
     }
 	
