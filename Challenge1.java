@@ -32,9 +32,7 @@ public class Challenge1 {
 	}
 	
 	public static boolean findString(String value, List<String> list)
-    {	
-    	boolean b = true;
-    	
+    {	    	
     	list = list.stream().map(String::toUpperCase).collect(Collectors.toList());
     	
     	return list.contains(value) ? false : true; 
