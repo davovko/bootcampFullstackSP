@@ -35,16 +35,7 @@ public class Challenge1 {
     {	
     	boolean b = true;
     	
-    	/*for(int j = 0; j < list.size(); j++ ) {	 
-    		if(value.equals(list.get(j).toString().toUpperCase())) {
-    			b = false;
-    			break;
-    		}	    		
-    	}*/
-    	
-    	list = list.stream()
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
+    	list = list.stream().map(String::toUpperCase).collect(Collectors.toList());
     	
     	b = list.contains(value) ? false : true; 	
     	
@@ -53,15 +44,16 @@ public class Challenge1 {
 	
 	
 	public static void main(String[] args) {
-		
-		//Punto 2.a
+
+		//Punto 2.a		
 		System.out.println(randomNumber());	
-			
+
 		//Punto 2.b
+
 		System.out.print("Digite el nombre de una fruta: ");
-	    option = scanner.nextLine().trim().toUpperCase();
-    	
-    	List<String> list = new ArrayList<String>();
+		option = scanner.nextLine().trim().toUpperCase();
+
+		List<String> list = new ArrayList<String>();
     	
     	list.add("Mango");  
     	list.add("Manzana");  
