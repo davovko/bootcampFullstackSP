@@ -8,18 +8,9 @@ public class Challenge1 {
 	
 	static Scanner scanner = new Scanner(System.in);
 	static String option;
+	static int i;
 	
-	public static String randomNumber() {
-		
-		int i=0;
-    	
-    	do {
-    		System.out.print("Digite una de las siguientes opciones: \n* Tipo A\n* Tipo B\n");
-	    	option = scanner.nextLine().trim().toUpperCase();
-	    	
-	    	i = (option.equals("TIPO A") || option.equals("TIPO B") ? 1 : 0);	   	    	
-    		
-    	}while(i == 0);  
+	public static String randomNumber(String option) {		
     	    	
     	String randomNumber = option.equals("TIPO A")? "54" : "08";
     	
@@ -40,9 +31,17 @@ public class Challenge1 {
 	
 	
 	public static void main(String[] args) {
+		
+    	do {
+    		System.out.print("Digite una de las siguientes opciones: \n* Tipo A\n* Tipo B\n");
+	    	option = scanner.nextLine().trim().toUpperCase();
+	    	
+	    	i = (option.equals("TIPO A") || option.equals("TIPO B") ? 1 : 0);	   	    	
+    		
+    	}while(i == 0);  
 
 		//Punto 2.a		
-		System.out.println(randomNumber());	
+		System.out.println(randomNumber(option));	
 
 		//Punto 2.b
 
